@@ -1,7 +1,7 @@
 # incomming webhook bot
 <img src="https://github.com/0g3/slackbot/blob/master/img/result.png"> 
 
-## [BLOCKS](https://api.slack.com/reference/messaging/blocks#actions)
+## [BLOCKS](https://api.slack.com/reference/messaging/blocks)
 🚀 Section
 
 🚀 Devider
@@ -14,7 +14,7 @@
 
 🚧 File
 
-## [BLOCK ELEMENTS](https://api.slack.com/reference/messaging/block-elements#image)
+## [BLOCK ELEMENTS](https://api.slack.com/reference/messaging/block-elements)
 🚀 Image
 
 🚧 Button
