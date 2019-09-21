@@ -1,6 +1,6 @@
 # incomming webhook bot
 
-## BLOCK
+## [BLOCKS](https://api.slack.com/reference/messaging/blocks#actions)
 🚀 Section
 
 🚀 Devider
@@ -13,18 +13,7 @@
 
 🚧 File
 
-## BLOCK ELEMENTS
-```
-	BlockElementTypeImage               BlockElementType = "image"
-	BlockElementTypeButton              BlockElementType = "button"
-	BlockElementTypeStaticSelect        BlockElementType = "static_select"
-	BlockElementTypeExternalSelect      BlockElementType = "external_select"
-	BlockElementTypeUsersSelect         BlockElementType = "users_select"
-	BlockElementTypeConversationsSelect BlockElementType = "conversations_select"
-	BlockElementTypeChannelsSelect      BlockElementType = "channels_select"
-	BlockElementTypeOverflow            BlockElementType = "overflow"
-	BlockElementTypeDatepicker          BlockElementType = "datepicker"
-```
+## [BLOCK ELEMENTS](https://api.slack.com/reference/messaging/block-elements#image)
 🚀 Image
 
 🚧 Button
