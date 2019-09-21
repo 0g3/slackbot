@@ -18,12 +18,12 @@ func main() {
 	m := &slackbot.Message{
 		Text: "送信フェイル！ フォールバック専用文字列と化した先輩!",
 		Blocks: []slackbot.Block{
-			slackbot.NewSectionBlock(&slackbot.Section{
+			slackbot.NewSectionBlock(&slackbot.SectionBlockDTO{
 				Text: &slackbot.Text{
 					Type: slackbot.TextTypeMkdwn,
 					Text: "selectの文章です",
 				},
-				Accessory: slackbot.NewBlockElementImage(&slackbot.ImageElement{
+				Accessory: slackbot.NewImageElement(&slackbot.ImageElementDTO{
 					ImageURL: "http://trender-news.com/thumbnail/113635.jpg",
 					AltText:  "可愛すぎて無理",
 				}),
@@ -46,7 +46,16 @@ func main() {
 					},
 				},
 			}),
-			slackbot.NewDividerBlock(&slackbot.Divider{}),
+			slackbot.NewDividerBlock(&slackbot.DividerBlockDTO{}),
+			slackbot.NewImageBlock(&slackbot.ImageBlockDTO{
+				ImageURL: "https://pbs.twimg.com/media/BtKE6XdCMAA0sYq.jpg",
+				AltText:  "shinchoku",
+				Title: &slackbot.Text{
+					Type: slackbot.TextTypeMkdwn,
+					Text: "image title!!!!!!!!!!!!",
+				},
+			}),
+			slackbot.NewDividerBlock(&slackbot.DividerBlockDTO{}),
 		},
 	}
 	if err := bot.Post(m); err != nil {

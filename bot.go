@@ -84,9 +84,37 @@ const (
 )
 
 //==============================================================================
-// Block: Divider
+// ImageBlock
 //==============================================================================
-func NewDividerBlock(d *Divider) Block {
+func NewImageBlock(i *ImageBlockDTO) Block {
+	block := make(Block)
+	block["type"] = BlockTypeImage
+
+	block["image_url"] = i.ImageURL
+	block["alt_text"] = i.AltText
+
+	if i.Title != nil {
+		i.Title.Type = TextTypePlainText // これしか許されない
+		block["title"] = i.Title
+	}
+	if i.BlockID != "" {
+		block["block_id"] = i.BlockID
+	}
+
+	return block
+}
+
+type ImageBlockDTO struct {
+	ImageURL string
+	AltText  string
+	Title    *Text
+	BlockID  string
+}
+
+//==============================================================================
+// DividerBlock
+//==============================================================================
+func NewDividerBlock(d *DividerBlockDTO) Block {
 	block := make(Block)
 	block["type"] = BlockTypeDivider
 	if d.BlockID != "" {
@@ -95,14 +123,14 @@ func NewDividerBlock(d *Divider) Block {
 	return block
 }
 
-type Divider struct {
+type DividerBlockDTO struct {
 	BlockID string
 }
 
 //==============================================================================
-// Block: Section
+// SectionBlock
 //==============================================================================
-func NewSectionBlock(s *Section) Block {
+func NewSectionBlock(s *SectionBlockDTO) Block {
 	block := make(Block)
 	block["type"] = BlockTypeSection
 
@@ -123,7 +151,7 @@ func NewSectionBlock(s *Section) Block {
 	return block
 }
 
-type Section struct {
+type SectionBlockDTO struct {
 	BlockID   string
 	Text      *Text
 	Accessory BlockElement
@@ -161,7 +189,7 @@ const (
 
 type BlockElement map[string]interface{}
 
-func NewBlockElementImage(i *ImageElement) BlockElement {
+func NewImageElement(i *ImageElementDTO) BlockElement {
 	be := make(BlockElement)
 	be["type"] = BlockElementTypeImage
 	be["image_url"] = i.ImageURL
@@ -169,7 +197,7 @@ func NewBlockElementImage(i *ImageElement) BlockElement {
 	return be
 }
 
-type ImageElement struct {
+type ImageElementDTO struct {
 	ImageURL string
 	AltText  string
 }
